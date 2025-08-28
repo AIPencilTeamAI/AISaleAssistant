@@ -2,6 +2,7 @@ from langchain_ollama import ChatOllama
 from langchain_core.messages import HumanMessage, SystemMessage
 import dotenv
 import os
+
 def conversation_extraction(psid: str):
     """
     Extract information from user converation.
