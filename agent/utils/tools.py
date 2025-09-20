@@ -6,6 +6,7 @@ import json
 import os
 from dotenv import load_dotenv
 load_dotenv()
+OLLAMA_URL=os.getenv("OLLAMA_URL")
 
 embeddings = OllamaEmbeddings(model="bge-m3:latest",
                               base_url=os.getenv("OLLAMA_HOST"))
@@ -81,6 +82,7 @@ llm = ChatOllama(model = "qwen3:4b",
                 temperature = 0.1,
                 top_k = 10,
                 top_p = 0.1,
+                base_url=OLLAMA_URL
                 ).with_structured_output(None, method="json_mode")
 @tool("tone_analyzer")
 async def tone_analyzer(text: str):

@@ -3,6 +3,7 @@
 #XLSE ONLY !!!
 import re
 import pandas as pd
+import os
 
 print("Reading File...")
 excel = pd.read_excel("product_list_expanded.xlsx")
@@ -11,7 +12,10 @@ descriptions = list(excel["Description"])
 prices = list(excel["Price"])
 
 from langchain_ollama import OllamaEmbeddings
-embedding = OllamaEmbeddings(model = "bge-m3:latest") #1024 dim
+embedding = OllamaEmbeddings(model="bge-m3:latest",
+                              base_url=os.getenv("OLLAMA_HOST"))
+
+
 names_embedded = [] 
 descriptions_embedded = []
 

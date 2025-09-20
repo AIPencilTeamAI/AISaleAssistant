@@ -1,7 +1,7 @@
 import asyncio
 from watchfiles import awatch
 import os
-from  conversation_extraction import conversation_extraction
+from  Agent.Utils.conversation_extraction import conversation_extraction
 import redis
 from pymongo import MongoClient
 from dotenv import load_dotenv
