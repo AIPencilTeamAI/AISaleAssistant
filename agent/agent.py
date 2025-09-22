@@ -15,7 +15,7 @@ api_key = os.getenv("GOOGLE_API_KEY")
 def create_graph(redis):
     llm = ChatGoogleGenerativeAI(
             model="gemini-2.5-flash",
-            google_api_key=api_key)
+            google_api_key=api_key) 
 
     """llm = ChatOllama(model = "qwen3:14b",
                     temperature = 0.1,

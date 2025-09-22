@@ -17,7 +17,7 @@ async def get_product_information(product_name):
     Queries the RAG (Retrieval-Augmented Generation) system to retrieve and generate an answer based on the input question.
     Its contain all product_information.
     Args:
-        product_name (str): Product name.
+        product_name (str): Product name(In vietnamese).
     Returns:
         str: JSON string containing the generated answer based on retrieved relevant information with rank of similarity.
     """
@@ -41,7 +41,7 @@ async def find_product_name(description):
     Its contain all information about product description to find product name.
 
     Args:
-        text (str): The input question or query to be searched.
+        text (str): The input question or query to be searched in Vietnamese.
     Returns:
         str: JSON string containing the generated answer based on retrieved relevant information with rank of similarity.
     """

@@ -1,0 +1,29 @@
+    name: assistant
+    channels:
+      - defaults
+      - conda-forge
+    dependencies:
+      - pip:
+        - fastapi
+        - uvicorn
+        - pydantic
+        - python-dotenv
+        - requests
+        - httpx
+        - langchain-core
+        - langchain-community
+        - langchain-ollama
+        - langchain-google-genai
+        - langgraph
+        - langgraph-checkpoint-redis
+        - redis
+        - pymongo
+        - asyncpg
+        - psycopg2-binary
+        - Pillow
+        - opencv-python-headless
+        - pytesseract
+        - watchfiles
+        - numpy
+        - pandas
+        - openpyxl
