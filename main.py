@@ -12,10 +12,10 @@ redis = RedisSaver()
 graph = create_graph(redis)
 
 class AISaleAssistant(BaseModel):
-    sender: Optional[str]
+    username: Optional[str]
     content: Optional[str]
-    threadId: Optional[str]
-    status: Optional[str]
+    threadID: Optional[str]
+    history: Optional[str]
 
 from agent.utils.memory_check import redis_memoryCheck, mongo_memoryCheck, memory_cache
 app = FastAPI()
@@ -33,11 +33,11 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-@app.post("/chat")
+@app.post("/assistant")
 async def chat_endpoint(request: AISaleAssistant):
     sender = request.sender
     content = request.content
-    thread_id = request.threadId
+    thread_id = request.threadID
     status = request.status.lower()
     
     graph_input = {"raw_input": {"sender": sender, "content": content, "thread_id": thread_id, "status": status}}
